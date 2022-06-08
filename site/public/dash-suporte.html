@@ -1,0 +1,1036 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/css-dash-suporte.css">
+  <link rel="shortcut icon" href="./assets/imgs/logos/omniview-logo.png" type="image/x-icon">
+  <link rel="stylesheet" href="./css/dash-suporteResponsivo.css">
+  <link rel="stylesheet" href="./css/dashboardgerente.css">
+  <title>Suporte</title>
+  <script src="js/dash-suporte.js"></script>
+  <script src="https://kit.fontawesome.com/cc2f784b0a.js" crossorigin="anonymous"></script>
+  <script src="js/functionDataBase.js"></script>
+</head>
+
+
+<body onload="getMemoriaRamEmUsoTot2()">
+  <div id="container">
+
+    <div class="headerPai">
+
+      <div class="header">
+
+        <div class="conteudoHeader">
+
+          <div class="info">
+
+          </div>
+
+          <h1 id="id_nome_maquina" class="titulo_maquina">Totem <span id="idDoTotemAqui">---</span></h1>
+        </div>
+        <header id="header">
+          <div class="container">
+            <nav class="navbar" id="navBar">
+              <img id="logoNavbar" src="./assets/imgs/logos/omniview-logo.png">
+              <ul>
+                <li><a href="" class="li-checked">Seus gráficos</a></li>
+                <li><a href="index.html">Sair</a></li>
+              </ul>
+            </nav>
+          </div>
+        </header>
+        <div class="lateral-m">
+          <nav>
+            <div class="nav">
+              <input type="checkbox" id="menu_lateral" class="input-menu ">
+
+              <label for="menu_lateral">
+                <div class="menu">
+
+                  <span class="hamburguer"></span>
+                </div>
+              </label>
+
+              <label for="menu_lateral" class="botao-fechar">x</label>
+
+              <div class="box-menu">
+                <a href="index.html">Sair</button></a>
+              </div>
+            </div>
+          </nav>
+        </div>
+
+
+      </div>
+
+    </div>
+
+
+
+    <div class="conteudoPai">
+
+      <div id="listarTotemIdSup" class="botoes">
+
+      </div>
+
+      <div class="graficos">
+        <div class="graf_cima">
+
+          <div class="graf_cima_esq" id="graf_cima_esq_tot1">
+
+            <div class="div_graf_interna">
+              <canvas id="tot1_cima_esquerda" style="height: 90%;width: 90%;"></canvas>
+              <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            </div>
+          </div>
+
+          <div class="graf_cima_esq" id="graf_cima_esq_tot2" style="display: none;">
+
+            <div class="div_graf_interna">
+              <canvas id="tot2_cima_esquerda" style="height: 90%;width: 90%;"></canvas>
+              <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            </div>
+          </div>
+
+          <div class="graf_cima_esq" id="graf_cima_esq_tot3" style="display: none;">
+
+            <div class="div_graf_interna">
+              <canvas id="tot3_cima_esquerda" style="height: 90%;width: 90%;"></canvas>
+              <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            </div>
+
+          </div>
+
+          <div class="graf_cima_esq" id="graf_cima_esq_cai1" style="display: none;">
+
+            <div class="div_graf_interna">
+              <canvas id="cai1_cima_esquerda" style="height: 90%;width: 90%;"></canvas>
+              <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            </div>
+
+          </div>
+          <div class="graf_cima_esq" id="graf_cima_esq_cai2" style="display: none;">
+
+            <div class="div_graf_interna">
+              <canvas id="cai2_cima_esquerda" style="height: 90%;width: 90%;"></canvas>
+              <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            </div>
+          </div>
+
+
+          <div class="graf_cima_dir" id="graf_cima_dir_tot1">
+            <div class="div_componentes_computador">
+              <h6>ARMAZENAMENTO</h6>
+              <canvas id="tot1_cima_direita" style="height: 90%;width: 90%;"></canvas>
+              <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+            </div>
+          </div>
+
+          <div class="graf_cima_dir " id="graf_cima_dir_tot2" style="display: none;">
+            <div class="div_componentes_computador">
+              <h6>ARMAZENAMENTO</h6>
+              <canvas id="tot2_cima_direita" style="height: 90%;width: 90%;"></canvas>
+              <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+            </div>
+          </div>
+          <div class="graf_cima_dir" id="graf_cima_dir_tot3" style="display: none;">
+            <div class="div_componentes_computador">
+              <h6>ARMAZENAMENTO</h6>
+              <canvas id="tot3_cima_direita" style="height: 90%;width: 90%;"></canvas>
+              <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+            </div>
+          </div>
+          <div class="graf_cima_dir" id="graf_cima_dir_cai1" style="display: none;">
+            <div class="div_componentes_computador">
+              <h6>ARMAZENAMENTO</h6>
+              <canvas id="cai1_cima_direita" style="height: 90%;width: 90%;"></canvas>
+              <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+            </div>
+          </div>
+          <div class="graf_cima_dir" id="graf_cima_dir_cai2" style="display: none;">
+            <div class="div_componentes_computador">
+              <h6>ARMAZENAMENTO</h6>
+              <canvas id="cai2_cima_direita" style="height: 90%;width: 90%;"></canvas>
+              <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+            </div>
+          </div>
+
+        </div>
+
+        <div class="graf_baixo">
+
+
+          <div class="graf_esq" id="graf_esq_tot1">
+
+            <div class="div_graf_interna">
+              <h6>MEMÓRIA RAM</h6>
+              <canvas id="tot1_baixo_esquerda" style="height: 90%;width: 90%;"></canvas>
+              <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            </div>
+
+          </div>
+          <div class="graf_esq" id="graf_esq_tot2" style="display: none;">
+
+            <div class="div_graf_interna">
+              <h6>MEMÓRIA RAM</h6>
+              <canvas id="tot2_baixo_esquerda" style="height: 90%;width: 90%;"></canvas>
+              <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            </div>
+
+          </div>
+
+          <div class="graf_esq" id="graf_esq_tot3" style="display: none;">
+
+            <div class="div_graf_interna">
+              <h6>MEMÓRIA RAM</h6>
+              <canvas id="tot3_baixo_esquerda" style="height: 90%;width: 90%;"></canvas>
+              <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            </div>
+          </div>
+          <div class="graf_esq" id="graf_esq_cai1" style="display: none;">
+
+            <div class="div_graf_interna">
+              <h6>MEMÓRIA RAM</h6>
+              <canvas id="cai1_baixo_esquerda" style="height: 90%;width: 90%;"></canvas>
+              <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            </div>
+          </div>
+          <div class="graf_esq" id="graf_esq_cai2" style="display: none;">
+
+            <div class="div_graf_interna">
+              <h6>MEMÓRIA RAM</h6>
+              <canvas id="cai2_baixo_esquerda" style="height: 90%;width: 90%;"></canvas>
+              <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            </div>
+
+          </div>
+
+          <div class="graf_dir" id="graf_dir_tot1">
+
+            <div class="div_componentes_computador">
+
+              <p><b><i class="title_info_equip">Informações do seu equipamento</i></b></p>
+              <span style="display: flex; width: 100%;">
+                <p>Sistema Operacional:</p>
+                <p id="somaquina"></p>
+              </span>
+              <p>Memória Ram: <span id="ramHtml"></span>GB</p>
+              <p>Disco: <span id="discoTotal"></span>GB</p>
+              <p>Processador: <span id="processadorHtml"></span></p>
+              <p>Tipo do sistema: <span id="arqmaquina"></span> bit</p>
+
+            </div>
+
+          </div>
+
+          <div class="graf_dir" id="graf_dir_tot2" style="display: none;">
+
+            <div class="div_componentes_computador">
+              <p><b><i class="title_info_equip">Informações do seu equipamento</i></b></p>
+              <p>Sistema Operacional: Ubuntu</p>
+              <p>Memória Ram:16GB</p>
+              <p>Disco: 500GB</p>
+              <p>Processador: INTEL CRE I10-10800</p>
+              <p>Tipo do sistema: 64bit</p>
+
+            </div>
+
+          </div>
+
+          <div class="graf_dir" id="graf_dir_tot3" style="display: none;">
+
+            <div class="div_componentes_computador">
+
+              <p><b><i class="title_info_equip">Informações do seu equipamento</i></b></p>
+              <p>Sistema Operacional: Windows</p>
+              <p>Memória Ram: 20GB</p>
+              <p>Disco: 800GB</p>
+              <p>Processador: INTEL CORE I11-11400</p>
+              <p>Tipo do sistema: 64bit</p>
+
+            </div>
+
+          </div>
+
+          <div class="graf_dir" id="graf_dir_cai1" style="display: none;">
+
+            <div class="div_componentes_computador">
+
+              <p><b><i class="title_info_equip">Informações do seu equipamento</i></b></p>
+              <p>Sistema Operacional: Windows</p>
+              <p>Memória Ram: 50GB</p>
+              <p>Disco: 2T</p>
+              <p>Processador: INTEL CORE I10-10110</p>
+              <p>Tipo do sistema: 64bit</p>
+
+            </div>
+
+          </div>
+
+          <div class="graf_dir" id="graf_dir_cai2" style="display: none;">
+
+            <div class="div_componentes_computador">
+
+              <p><b><i class="title_info_equip">Informações do seu equipamento</i></b></p>
+              <p>Sistema Operacional: Ubuntu</p>
+              <p>Memória Ram: 32GB</p>
+              <p>Disco: 3T</p>
+              <p>Processador: INTEL CORE I7-10400</p>
+              <p>Tipo do sistema: 64bit</p>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</body>
+
+
+
+<script>
+
+
+
+
+  var ramTotalMaq;
+  var memoriaTotalMaq;
+  var idMaquina;
+
+  function listarBotoes() {
+    fetch("/usuarios/getBotao", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then(async function (resposta) {
+      // onde eu vou renderizar as coisas
+      const container = document.querySelector(".botoes");
+      const usuarios = await resposta.json();
+      for (let i = 0; i < usuarios.length; i++) {
+        console.log(usuarios[i]);
+        let botoesGrafico = document.createElement("button")
+        botoesGrafico.innerHTML = `Maquina ${usuarios[i].id}`
+
+        botoesGrafico.onclick = function atualizarDados() {
+
+          //Variaveis Locais
+          somaquina.innerHTML = usuarios[i].sistemaOperacional
+          ramHtml.innerHTML = usuarios[i].ramTotal
+          processadorHtml.innerHTML = usuarios[i].processador
+          discoTotal.innerHTML = usuarios[i].disco
+          arqmaquina.innerHTML = usuarios[i].arquitetura
+          
+
+          // Variavies Globais
+          ramTotalMaq = usuarios[i].ramTotal;
+          memoriaTotalMaq = usuarios[i].disco;
+          idMaquina = usuarios[i].id
+
+          idDoTotemAqui.innerHTML = idMaquina
+          
+
+
+          console.log("QUE ISSO MEI FIO CALMA " + ramTotalMaq)
+          console.log("CHEEEEEGAAA " + idMaquina)
+          //container.append(botoesGrafico)
+        }
+
+        container.append(botoesGrafico)
+      }
+    })
+  }
+
+
+  var ramUsoAgora;
+  var memoriaUsoAgora;
+  var ramLivre;
+  var memoriaRam;
+  var discoDisponivel;
+  var cpuMaquina;
+  
+  function getMemoriaRamEmUsoTot2() {
+
+    fetch("/usuarios/getMemoriaRamEmUsoTot2", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        idMaqServer: idMaquina
+
+      })
+    }).then(function (resposta) {
+      //console.log("ESTOU NO THEN DO getMemoriaRamEmUsoTot2()!")
+      if (resposta.ok) {
+        resposta.json().then(function (resposta) {
+          //console.log("Dados recebidos do usuario: ", JSON.stringify(resposta));
+
+          ramEmuso = resposta[resposta.indexOf(':') + 1]//não sei pq mas isso funciona
+          //console.log(ramEmuso.RamEmUsobd);
+          sessionStorage.RAMEMUSOTOT2 = ramEmuso.RamEmUsobd;
+
+        });
+      } else {
+        //console.log("Dados recebidos: ", JSON.stringify(resposta));
+      }
+    }).catch(function (erro) {
+      console.log(erro);
+    })
+    return false;
+    //.then(async function (resposta) {
+    //   // onde eu vou renderizar as coisas
+    //   const container = document.querySelector(".botoes");
+    //   const usuarios = await resposta.json();
+    //   console.log ("NAO NAO NAO" + usuarios.ram)
+    // })
+
+  };
+
+  function getMemoriaEmUso() {
+    fetch("/usuarios/getMemoriaEmUso", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        idMaqServer: idMaquina
+
+      })
+    }).then(function (resposta) {
+      console.log("ESTOU NO THEN DO getMemoriaEmUso()!")
+      if (resposta.ok) {
+        resposta.json().then(function (resposta) {
+          //console.log("Dados recebidos do usuario: ", JSON.stringify(resposta));
+
+          memoriaemuso = resposta[resposta.indexOf(':') + 1]//não sei pq mas isso funciona
+          //console.log(memoriaemuso.Memoriaemusobd);
+          sessionStorage.MEMORIAEMUSO = memoriaemuso.Memoriaemusobd;
+
+        });
+      } else {
+        //console.log("Dados recebidos: ", JSON.stringify(resposta));
+      }
+    }).catch(function (erro) {
+      console.log(erro);
+    })
+    return false;
+  };
+
+  function getCpu() {
+    fetch("/usuarios/getCpu", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        idMaqServer: idMaquina
+
+      })
+    }).then(function (resposta) {
+      console.log("ESTOU NO THEN DO getCpu()!")
+      if (resposta.ok) {
+        resposta.json().then(function (resposta) {
+          console.log("Dados recebidos do usuario: ", JSON.stringify(resposta));
+
+          cpu = resposta[resposta.indexOf(':') + 1]//não sei pq mas isso funciona
+          console.log(cpu.Cpubd);
+          sessionStorage.CPU = cpu.Cpubd;
+
+        });
+      } else {
+        console.log("Dados recebidos: ", JSON.stringify(resposta));
+      }
+    }).catch(function (erro) {
+      console.log(erro);
+    })
+    return false;
+  };
+
+  function atualizarGrafico() {
+    const caminho = myChart_tot1_cima.data.datasets[0].data
+    cpuMaquina = sessionStorage.CPU
+    for (let i = 0; i <= caminho.length - 2; i++) {
+      caminho[i] = caminho[i + 1]
+    }
+
+    caminho[caminho.length - 1] = cpuMaquina;
+
+    myChart_tot1_cima.update();
+
+  }
+
+  function getTudoAgora() {
+    ramUsoAgora = sessionStorage.RAMEMUSOTOT2;
+    memoriaUsoAgora = sessionStorage.MEMORIAEMUSO;
+
+    memoriaRam = ramTotalMaq - ramUsoAgora
+    discoDisponivel = memoriaTotalMaq - memoriaUsoAgora
+
+    myChart.data.datasets[0].data[1] = memoriaRam;
+    myChart.data.datasets[0].data[0] = ramUsoAgora;
+    myChart_tot1_direito.data.datasets[0].data[1] = memoriaTotalMaq;
+    myChart_tot1_direito.data.datasets[0].data[0] = memoriaUsoAgora;
+
+    myChart_tot1_direito.update();
+    myChart.update();
+  }
+
+  setInterval(() => {
+    getMemoriaRamEmUsoTot2();
+    getMemoriaEmUso();
+    getCpu();
+    getTudoAgora();
+  }, 1000)
+
+  setInterval(() => {
+    atualizarGrafico();
+  }, 800)
+
+  
+
+  //----------------
+
+  var cont = 0;
+  var Indice1 = 0;
+
+  let Listaii = [sessionStorage.CPU];
+  Listaii.push(sessionStorage.CPU);
+
+
+  function ArryCPU() {
+    for (let index = 0; index <= 12; index++) {
+
+      if (cont == 0) {
+
+        cont++;
+        Indice1 = sessionStorage.CPU;
+
+      } else if (cont == 1) {
+
+        cont++;
+        Indice2 = sessionStorage.CPU;
+      }
+
+    }
+
+    console.log(Indice1);
+  }
+
+  // Configuração do grafico Toten 01 esquerda 
+  const labels = [
+    'USADOS',
+    'DISPONIVEL',
+  ];
+
+  const data = {
+    labels: labels,
+    datasets: [{
+      label: 'RAM(%)',
+      backgroundColor: ['blue', 'white'],
+      data: [Number(ramUsoAgora), Number(memoriaRam)],
+    }]
+  }
+
+  const config = {
+    type: 'doughnut',
+    data: data,
+    options: {
+
+      rotation: 270, // start angle in degrees
+      circumference: 180, // sweep angle in degrees
+    }
+  };
+
+  const myChart = new Chart(
+    document.getElementById('tot1_baixo_esquerda'),
+    config
+  );
+
+  //-----------------------------------------------------------
+
+  // // Configuração do grafico Toten 02 esquerda 
+  // const labels_tot2 = [
+  //   'USADOS',
+  //   'DISPONIVEL',
+  // ];
+
+  // const data_tot2 = {
+  //   labels: labels_tot2,
+  //   datasets: [{
+  //     label: 'RAM(%)',
+  //     backgroundColor: ['red', 'white'],
+  //     data: [46, 100],
+  //   }]
+  // }
+
+  // const config_tot2 = {
+  //   type: 'doughnut',
+  //   data: data_tot2,
+  //   options: {
+
+  //     rotation: 270, // start angle in degrees
+  //     circumference: 180, // sweep angle in degrees
+  //   }
+  // };
+
+  // const myChart_tot2 = new Chart(
+  //   document.getElementById('tot2_baixo_esquerda'),
+  //   config_tot2
+  // );
+
+  // //-----------------------------------------------------------
+
+  // // Configuração do grafico Toten 3 esquerda 
+  // const labels_tot3 = [
+  //   'USADOS',
+  //   'TOTAL',
+  // ];
+
+  // const data_tot3 = {
+  //   labels: labels_tot3,
+  //   datasets: [{
+  //     label: 'RAM(%)',
+  //     backgroundColor: ['orange', 'white'],
+  //     data: [46, 100],
+  //   }]
+  // }
+
+  // const config_tot3 = {
+  //   type: 'doughnut',
+  //   data: data_tot3,
+  //   options: {
+
+  //     rotation: 270, // start angle in degrees
+  //     circumference: 180, // sweep angle in degrees
+  //   }
+  // };
+
+  // const myChart_tot3 = new Chart(
+  //   document.getElementById('tot3_baixo_esquerda'),
+  //   config_tot3
+  // );
+  // //-----------------------------------------------------------
+
+  // // Configuração do grafico Caixa 1 esquerda 
+  // const labels_cai1 = [
+  //   'USADOS',
+  //   'TOTAL',
+  // ];
+
+  // const data_cai1 = {
+  //   labels: labels_cai1,
+  //   datasets: [{
+  //     label: 'RAM(%)',
+  //     backgroundColor: ['greenyellow', 'white'],
+  //     data: [46, 100],
+  //   }]
+  // }
+
+  // const config_cai1 = {
+  //   type: 'doughnut',
+  //   data: data_cai1,
+  //   options: {
+
+  //     rotation: 270, // start angle in degrees
+  //     circumference: 180, // sweep angle in degrees
+  //   }
+  // };
+
+  // const myChart_cai1 = new Chart(
+  //   document.getElementById('cai1_baixo_esquerda'),
+  //   config_cai1
+  // );
+  // //-----------------------------------------------------------
+
+  // // Configuração do grafico Toten 1 esquerda CPU 
+  // const labels_cai2 = [
+  //   'USADOS',
+  //   'TOTAL',
+  // ];
+
+  // const data_cai2 = {
+  //   labels: labels_cai2,
+  //   datasets: [{
+  //     label: 'RAM(%)',
+  //     backgroundColor: ['yellow', 'white'],
+  //     data: [46, 100],
+  //   }]
+  // }
+
+  // const config_cai2 = {
+  //   type: 'doughnut',
+  //   data: data_cai2,
+  //   options: {
+
+  //     rotation: 270, // start angle in degrees
+  //     circumference: 180, // sweep angle in degrees
+  //   }
+  // };
+
+  // const myChart_cai2 = new Chart(
+  //   document.getElementById('cai2_baixo_esquerda'),
+  //   config_cai2
+  // );
+  // //-----------------------------------------------------------
+
+  // Configuração do grafico toten esquerda cima  
+  const labels_tot1_cima = [
+    '1h',
+    '2h',
+    '3h',
+    '4h',
+    '5h',
+    '6h',
+    '7h',
+    '8h',
+    '9h',
+    '10h',
+    '11h',
+    '12h',
+    '13h',
+    '14h',
+    '15h',
+    '16h',
+    '17h',
+    '18h',
+    '19h',
+    '20h',
+    '21h',
+    '22h',
+    '23h',
+    '24h',
+  ];
+
+  const data_tot1_cima = {
+    labels: labels_tot1_cima,
+    datasets: [{
+      label: 'CPU(%)',
+      backgroundColor: 'blue',
+      borderColor: ['blue', 'white'],
+      data: ["","","","","","","","","","","","","","","","","","","","","","","",""],
+    }]
+  }
+
+  const config_tot1_cima = {
+    type: 'line',
+    data: data_tot1_cima,
+    options: {}
+  };
+
+  const myChart_tot1_cima = new Chart(
+    document.getElementById('tot1_cima_esquerda'),
+    config_tot1_cima
+  );
+  //-----------------------------------------------------------
+
+  // // Configuração do grafico toten 2 esquerda cima 
+  // const labels_tot2_cima = [
+  //   '7h',
+  //   '9h',
+  //   '11h',
+  //   '13h',
+  //   '15h',
+  //   '17h',
+  //   '19h',
+  //   '21h',
+  //   '23h',
+  //   '24h',
+  // ];
+
+  // const data_tot2_cima = {
+  //   labels: labels_tot2_cima,
+  //   datasets: [{
+  //     label: 'CPU(%)',
+  //     backgroundColor: 'red',
+  //     borderColor: ['red', 'white'],
+  //     data: [20, 58, 25, 60, 61, 10, 61, 61, 22, 10],
+  //   }]
+  // }
+
+  // const config_tot2_cima = {
+  //   type: 'line',
+  //   data: data_tot2_cima,
+  //   options: {}
+  // };
+
+  // const myChart_tot2_cima = new Chart(
+  //   document.getElementById('tot2_cima_esquerda'),
+  //   config_tot2_cima
+  // );
+  // //-----------------------------------------------------------
+
+  // // Configuração do grafico toten 3 esquerda cima 
+  // const labels_tot3_cima = [
+  //   '7h',
+  //   '9h',
+  //   '11h',
+  //   '13h',
+  //   '15h',
+  //   '17h',
+  //   '19h',
+  //   '21h',
+  //   '23h',
+  //   '24h',
+  // ];
+
+  // const data_tot3_cima = {
+  //   labels: labels_tot3_cima,
+  //   datasets: [{
+  //     label: 'CPU(%)',
+  //     backgroundColor: 'orange',
+  //     borderColor: ['orange', 'white'],
+  //     data: [16, 18, 15, 60, 11, 60, 61, 61, 62, 100],
+  //   }]
+  // }
+
+  // const config_tot3_cima = {
+  //   type: 'line',
+  //   data: data_tot3_cima,
+  //   options: {}
+  // };
+
+  // const myChart_tot3_cima = new Chart(
+  //   document.getElementById('tot3_cima_esquerda'),
+  //   config_tot3_cima
+  // );
+  // //-----------------------------------------------------------
+
+  // // Configuração do grafico caixa 1 esquerda cima 
+  // const labels_cai1_cima = [
+  //   '7h',
+  //   '9h',
+  //   '11h',
+  //   '13h',
+  //   '15h',
+  //   '17h',
+  //   '19h',
+  //   '21h',
+  //   '23h',
+  //   '24h',
+  // ];
+
+  // const data_cai1_cima = {
+  //   labels: labels_cai1_cima,
+  //   datasets: [{
+  //     label: 'CPU(%)',
+  //     backgroundColor: 'greenyellow',
+  //     borderColor: ['greenyellow', 'white'],
+  //     data: [56, 58, 45, 60, 61, 20, 61, 31, 62, 20],
+  //   }]
+  // }
+
+  // const config_cai1_cima = {
+  //   type: 'line',
+  //   data: data_cai1_cima,
+  //   options: {}
+  // };
+
+  // const myChart_cai1_cima = new Chart(
+  //   document.getElementById('cai1_cima_esquerda'),
+  //   config_cai1_cima
+  // );
+  // //-----------------------------------------------------------
+
+  // // Configuração do grafico caixa 2 esquerda cima 
+  // const labels_cai2_cima = [
+  //   '7h',
+  //   '9h',
+  //   '11h',
+  //   '13h',
+  //   '15h',
+  //   '17h',
+  //   '19h',
+  //   '21h',
+  //   '23h',
+  //   '24h',
+  // ];
+
+  // const data_cai2_cima = {
+  //   labels: labels_cai2_cima,
+  //   datasets: [{
+  //     label: 'CPU(%)',
+  //     backgroundColor: 'yellow',
+  //     borderColor: ['yellow', 'white'],
+  //     data: [36, 58, 55, 40, 81, 30, 61, 31, 62, 80],
+  //   }]
+  // }
+
+  // const config_cai2_cima = {
+  //   type: 'line',
+  //   data: data_cai2_cima,
+  //   options: {}
+  // };
+
+  // const myChart_cai2_cima = new Chart(
+  //   document.getElementById('cai2_cima_esquerda'),
+  //   config_cai2_cima
+  // );
+  // //-----------------------------------------------------------
+
+  // Configuração do grafico totem 1 direita cima 
+  const labels_tot1_direito = [
+    'USADOS',
+    'DISPONIVEL',
+  ];
+
+  const data_tot1_direito = {
+    labels: labels_tot1_direito,
+    datasets: [{
+      label: 'ARMAZENAMENTO',
+      backgroundColor: ['blue', 'white'],
+      borderColor: '#c4e0f3',
+      data: [Number(memoriaUsoAgora), Number(discoDisponivel)],
+    }]
+  }
+
+  const config_tot1_direito = {
+    type: 'pie',
+    data: data_tot1_direito,
+    options: {}
+  };
+
+  const myChart_tot1_direito = new Chart(
+    document.getElementById('tot1_cima_direita'),
+    config_tot1_direito
+  );
+
+  //-----------------------------------------------------------
+
+  // // Configuração do grafico totem 2 direita cima 
+  // const labels_tot2_direito = [
+  //   'USADOS',
+  //   'TOTAL',
+  // ];
+
+  // const data_tot2_direito = {
+  //   labels: labels_tot2_direito,
+  //   datasets: [{
+  //     label: 'ARMAZENAMENTO',
+  //     backgroundColor: ['red', 'white'],
+  //     borderColor: '#c4e0f3',
+  //     data: [36, 258],
+  //   }]
+  // }
+
+  // const config_tot2_direito = {
+  //   type: 'pie',
+  //   data: data_tot2_direito,
+  //   options: {}
+  // };
+
+  // const myChart_tot2_direito = new Chart(
+  //   document.getElementById('tot2_cima_direita'),
+  //   config_tot2_direito
+  // );
+
+  // //-----------------------------------------------------------
+
+  // // Configuração do grafico totem 3 direita cima 
+  // const labels_tot3_direito = [
+  //   'USADOS',
+  //   'TOTAL',
+  // ];
+
+  // const data_tot3_direito = {
+  //   labels: labels_tot3_direito,
+  //   datasets: [{
+  //     label: 'ARMAZENAMENTO',
+  //     backgroundColor: ['orange', 'white'],
+  //     borderColor: '#c4e0f3',
+  //     data: [361, 58],
+  //   }]
+  // }
+
+  // const config_tot3_direito = {
+  //   type: 'pie',
+  //   data: data_tot3_direito,
+  //   options: {}
+  // };
+
+  // const myChart_tot3_direito = new Chart(
+  //   document.getElementById('tot3_cima_direita'),
+  //   config_tot3_direito
+  // );
+
+  // //-----------------------------------------------------------
+
+  // // Configuração do grafico caixa 1 direita cima 
+  // const labels_cai1_direito = [
+  //   'USADOS',
+  //   'TOTAL',
+  // ];
+
+  // const data_cai1_direito = {
+  //   labels: labels_cai1_direito,
+  //   datasets: [{
+  //     label: 'ARMAZENAMENTO',
+  //     backgroundColor: ['greenyellow', 'white'],
+  //     borderColor: '#c4e0f3',
+  //     data: [36, 158],
+  //   }]
+  // }
+
+  // const config_cai1_direito = {
+  //   type: 'pie',
+  //   data: data_cai1_direito,
+  //   options: {}
+  // };
+
+  // const myChart_cai1_direito = new Chart(
+  //   document.getElementById('cai1_cima_direita'),
+  //   config_cai1_direito
+  // );
+
+  // //-----------------------------------------------------------
+
+  // // Configuração do grafico caixa 2 direita cima 
+  // const labels_cai2_direito = [
+  //   'USADOS',
+  //   'TOTAL',
+  // ];
+
+  // const data_cai2_direito = {
+  //   labels: labels_cai2_direito,
+  //   datasets: [{
+  //     label: 'ARMAZENAMENTO',
+  //     backgroundColor: ['yellow', 'white'],
+  //     borderColor: '#c4e0f3',
+  //     data: [136, 58],
+  //   }]
+  // }
+
+  // const config_cai2_direito = {
+  //   type: 'pie',
+  //   data: data_cai2_direito,
+  //   options: {}
+  // };
+
+  // const myChart_cai2_direito = new Chart(
+  //   document.getElementById('cai2_cima_direita'),
+  //   config_cai2_direito
+  // );
+
+  window.addEventListener("load", listarBotoes);
+
+  window.addEventListener("load", getMemoriaRamEmUsoTot2);
+
+  window.addEventListener("load", getMemoriaEmUso);
+
+  window.addEventListener("load", getTudoAgora);
+
+</script>
+
+</html>

@@ -1,0 +1,244 @@
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/imgs/logos/omniview-logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/defaultstyle.css">
+    <link rel="stylesheet" href="./css/atualizarStatusResponsivo.css">
+    <link rel="stylesheet" href="./css/atualizarStatus.css">
+    <script src="js/funcoes.js"></script>
+
+    <title>OmniView | Cadastro</title>
+
+    <style>
+        .divConteudo {
+            width: 400px;
+            height: 50px;
+            margin-bottom: 10px;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        .divNome {
+            width: 17rem;
+            height: 3rem;
+            display: flex;
+            flex-direction: column;
+            float: left;
+            align-items: flex-start;
+            justify-content: flex-end;
+            justify-items: flex-start;
+        }
+
+        .divBotao {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .conteudoNome {
+            display: flex;
+            width: auto;
+            height: auto;
+            float: left;
+        }
+
+        .conteudoNome {
+            display: flex;
+            width: auto;
+            height: auto;
+            float: right;
+        }
+
+        .botaostyle {
+            background-color: #324048;
+            color: white;
+            margin-top: 0.5vh;
+            border: 0px;
+            padding: 2px;
+            width: 50%;
+            border-radius: 20px;
+        }
+
+        .botaostyle:hover {
+            background-color: #273137;
+            color: whitesmoke
+        }
+
+        .nomeStyle {
+            font-weight: bolder;
+        }
+
+        .emailStyle {
+            font-style: italic;
+        }
+        .divConfirmacao{
+            height: 50px;
+            width: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header id="header">
+        <div class="container">
+            <nav class="navbar" id="navBar">
+                <img id="logoNavbar" src="./assets/imgs/logos/omniview-logo.png">
+                <ul>
+                    <li><a href="cadastro.html">Cadastrar funcionario</a></li>
+                    <li><a href="" class="li-checked">Atualizar funcionario</a></li>
+                    <li><a href="loginEmpresa.html">Sair</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="lateral-m">
+        <nav>
+            <div class="nav">
+                <input type="checkbox" id="menu_lateral" class="input-menu ">
+
+                <label for="menu_lateral">
+                    <div class="menu">
+
+                        <span class="hamburguer"></span>
+                    </div>
+                </label>
+
+                <label for="menu_lateral" class="botao-fechar">x</label>
+
+                <div class="box-menu">
+                    <a href="loginEmpresa.html">Sair</button></a>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+
+
+
+    <br><br><br><br><br><br><br>
+    <div class="banner-login ">
+        <div class="container ">
+
+
+            <div class="card medio">
+                <h2>Status do funcionario</h2><br><br>
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
+
+<script>
+
+    var statusDoUsuario
+
+    function listarUsuario() {
+        fetch("/usuarios/getUsuario", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        }).then(async function (resposta) {
+            // onde eu vou renderizar as coisas
+            const container = document.querySelector(".card");
+            const usuarios = await resposta.json();
+            for (let i = 0; i < usuarios.length; i++) {
+                console.log(usuarios[i]);
+                let conteudoNome = document.createElement("span")
+                let conteudoEmail = document.createElement("span")
+                let botaoOff = document.createElement("button")
+                let divConfirmacao = document.createElement("div")
+                let botaoOn = document.createElement("button")
+                let divConteudo = document.createElement("div")
+                let divNome = document.createElement("div")
+                let divBotao = document.createElement("div")
+
+                // setando o valor da variavel
+                conteudoNome.innerHTML = usuarios[i].nome
+                conteudoEmail.innerHTML = usuarios[i].email
+                botaoOff.innerHTML = "OFF"
+                botaoOn.innerHTML = "ON"
+
+                // colocando variavel no card
+                container.append(divConteudo)
+
+                // div conteudo englobando  divNome e email
+                divConteudo.append(divNome)
+                divConteudo.append(divBotao)
+                
+
+                // div pegando o nome e o email
+                divNome.append(conteudoNome)
+                divNome.append(conteudoEmail)
+                divNome.append(divConfirmacao)
+                // botoes
+                divBotao.append(botaoOff)
+                divBotao.append(botaoOn)
+
+                // nome da class
+                divConteudo.setAttribute("class", "divConteudo")
+                divNome.setAttribute("class", "divNome")
+                divBotao.setAttribute("class", "divBotao")
+                botaoOff.setAttribute("class", "botaostyle")
+                botaoOn.setAttribute("class", "botaostyle")
+                botaoOff.setAttribute("id", "IdBotaoOff")
+                divConfirmacao.setAttribute("class", "divConfirmacao")
+                botaoOn.setAttribute("id", "IdBotaoOn")
+                conteudoNome.setAttribute("class", "nomeStyle")
+                conteudoEmail.setAttribute("class", "emailStyle")
+
+
+                if (usuarios[i].status_user == 1) {
+                    divConfirmacao.style.backgroundColor = "green";
+                } else {
+                    divConfirmacao.style.backgroundColor = "red";
+                }
+
+                botaoOn.onclick = function ativarUsuario() {
+                    statusDoUsuario = 1;
+                    fetch("/usuarios/" + usuarios[i].id, {
+                        method: "PUT",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({
+                            statusUserServer: statusDoUsuario,
+                        }),
+                    }).then((res) => console.log(res));
+
+                    document.location.reload(true);
+                    window.alert("Alteração realizada com sucesso")
+                }
+
+                botaoOff.onclick = function desativarUsuario() {
+                    statusDoUsuario = 0;
+                    fetch("/usuarios/" + usuarios[i].id, {
+                        method: "PUT",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({
+                            statusUserServer: statusDoUsuario,
+                        }),
+                    }).then((res) => console.log(res));
+
+                    document.location.reload(true);
+                    window.alert("Alteração realizada com sucesso")
+                }
+            }
+        })
+    }
+
+    window.addEventListener("load", listarUsuario);
+</script>

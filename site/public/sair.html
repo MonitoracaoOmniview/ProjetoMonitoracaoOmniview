@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OmniView | Gerente</title>
+    <link rel="stylesheet" href="./css/defaultstyle.css">
+    <link rel="shortcut icon" href="./assets/imgs/logos/omniview-logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/indexresponsivo.css">
+    <link rel="stylesheet" href="./css/sair.css">
+    <link rel="stylesheet" href="./css/indexstyle.css">
+</head>
+<body>
+
+    <header id="header">
+        <div class="container">
+            <nav class="navbar" id="navBar">
+                <img id="logoNavbar" src="./assets/imgs/logos/omniview-logo.png">
+ 
+            </nav>
+        </div>
+    </header>
+    
+    <div class="lateral-m">
+        <nav>
+            <div class="nav">
+                <input type="checkbox" id="menu_lateral" class="input-menu ">
+
+                <label for="menu_lateral">
+                    <div class="menu">
+
+                        <span class="hamburguer"></span>
+                    </div>
+                </label>
+
+                <label for="menu_lateral" class="botao-fechar">x</label>
+                
+                <div class="box-menu">
+                    <a href="" class="li-checked">Cadastre-se</a>
+                    <a href="index.html">Home</a>
+                    <a href="login.html">Login</a>
+                    <a href="contatos.html">Contato</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="banner-cadastro">
+        <div class="container_login">
+            <div class="card_medio">
+                <h4>TEM CERTEZA QUE DESEJA SAIR?</h4>
+                <div class="formulario">
+                    <div>
+                        <button class="btn" onclick="sair_sim()">SIM</button> <br><br>
+                        <button class="btn" onclick="sair_nao()">NÃO</button>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-info">
+            <div class="container">
+                <div class="align-links-footer">
+                    <a href=""><img src="./assets/imgs/logos/logo-fbc.webp"></a>
+                    <a href=""><img src="./assets/imgs/logos/logo-insta.webp"></a>
+                    <a href=""><img src="./assets/imgs/logos/logo-linkd.webp"></a>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-copyright">
+            <div class="container">
+                <p>© 2022 by OmniView todos direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    </body>
+    </html>
+    <script>
+        function sair_sim(){
+        
+        window.location.href = 'index.html'
+        }
+    
+        function sair_nao(){
+        window.location.href = 'gerente_caixa.html'
+    
+        }
+    </script>

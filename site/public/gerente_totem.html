@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OmniView | Gerente</title>
+    <link rel="shortcut icon" href="./assets/imgs/logos/omniview-logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/defaultstyle.css">
+    <link rel="stylesheet" href="./css/indexresponsivo.css">
+    <link rel="stylesheet" href="./css/dashboardgerente.css">
+</head>
+<body>
+
+    <header id="header">
+        <div class="container">
+            <nav class="navbar" id="navBar">
+                <img id="logoNavbar" src="./assets/imgs/logos/omniview-logo.png">
+                <ul>
+                    <li><a href="gerente_caixa.html">Caixas</a></li>
+                    <li><a href="" class="li-checked">Totem</a>
+                    <li><a href="reiniciar_equipamento.html">Equipamentos</a>
+                    <li><a href="sair.html"><button class="botao-entrar">Sair</button></a></li>
+
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="lateral-m">
+        <nav>
+            <div class="nav">
+                <input type="checkbox" id="menu_lateral" class="input-menu ">
+
+                <label for="menu_lateral">
+                    <div class="menu">
+
+                        <span class="hamburguer"></span>
+                    </div>
+                </label>
+
+                <label for="menu_lateral" class="botao-fechar">x</label>
+                
+                <div class="box-menu">
+                    <a href="gerente_caixa.html">Caixas</a>
+                    <a href="" class="li-checked">Totem</a>
+                    <a href="reiniciar_equipamento.html">Equipamentos</a>
+                    <a href="sair.html"><button class="botao-entrar">Sair</button></a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <br><br><br><br><br>
+    <section class="time">
+        <div class="container">
+            <h1>Funcionamento dos Totens</h1>
+                <h4 id="titulo_verde">Verde: Tudo certo</h4>
+                <h4 id="titulo_amarelo">Amarelo: Cuidado</h4>
+                <h4 id="titulo_vermelho">Vermelho: Problema!</h4>
+            <div id="position_card">
+                <div class="flip" id="card" title="SEM PROBLEMAS">
+                    <div class="face" id="front">
+                        <div><h5>TOTEM 1</h5>
+                        <img src="assets/imgs/logos/computador-pessoal.png" alt="">
+                    </div></div>
+                    <div class="face" id="back">
+                    </div>
+                </div>
+                <div class="flip" id="card2" title="PERIGO">
+                    <div class="face2" id="front2">
+                        <div><h5>TOTEM 2</h5>
+                        <img src="assets/imgs/logos/computador-pessoal.png" alt="">
+                    </div></div>
+                    <div class="face2" id="back2">
+                        <span><b>RAM SOBRECARREGADA</b><br><br> Reinicie a aplicação ou chame o suporte</span>
+                    </div>
+                </div>
+                <div class="flip" id="card3" title="SEM PROBLEMAS">
+                    <div class="face3" id="front3">
+                        <div><h5>TOTEM 3</h5>
+                        <img src="assets/imgs/logos/computador-pessoal.png" alt="">
+                    </div></div>
+                    <div class="face3" id="back3">
+                    </div>
+                </div>
+                <div class="flip" id="card4" title="SEM PROBLEMAS">
+                    <div class="face4" id="front4">
+                        <div><h5>TOTEM 4</h5>
+                        <img src="assets/imgs/logos/computador-pessoal.png" alt="">
+                    </div></div>
+                    <div class="face4" id="back4">
+                    </div>
+                </div>
+                <div class="flip" id="card5" title="CUIDADO">
+                    <div class="face5" id="front5">
+                        <div><h5>TOTEM 5</h5>
+                        <img src="assets/imgs/logos/computador-pessoal.png" alt="">
+                    </div></div>
+                    <div class="face5" id="back5">
+                        <span><b>CUIDADO</b><br><br> Memória RAM acima da média</span>
+                    </div>
+                </div>
+
+            </div>
+    </section>
+        <footer>
+            <div class="footer-info">
+                <div class="container">
+                    <div class="align-links-footer">
+                        <a href=""><img src="./assets/imgs/logos/logo-fbc.webp"></a>
+                        <a href=""><img src="./assets/imgs/logos/logo-insta.webp"></a>
+                        <a href=""><img src="./assets/imgs/logos/logo-linkd.webp"></a>
+    
+    
+                    </div>
+                </div>
+            </div>
+    
+            <div class="footer-copyright">
+                <div class="container">
+                    <p>© 2022 by OmniView todos direitos reservados.</p>
+                </div>
+            </div>
+        </footer>
+
+            
+        
+  
+
+</body>
+</html>
+<script>
+    const card = document.querySelector("#card")
+    card.addEventListener("click", (e) => {
+        card.classList.toggle("flip")
+    })
+    const card2 = document.querySelector("#card2")
+    card2.addEventListener("click", (e) => {
+        card2.classList.toggle("flip")
+    })
+    const card3 = document.querySelector("#card3")
+    card3.addEventListener("click", (e) => {
+        card3.classList.toggle("flip")
+    })
+    const card4 = document.querySelector("#card4")
+    card4.addEventListener("click", (e) => {
+        card4.classList.toggle("flip")
+    })
+    const card5 = document.querySelector("#card5")
+    card5.addEventListener("click", (e) => {
+        card5.classList.toggle("flip")
+    })
+</script>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+       .switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {display:none;}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 100px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 100px;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+  </style>
+
+</head>
+<body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <label class="switch">
+    <input id="on1" type="checkbox">
+    <div class="slider"></div>
+  </label>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <label class="switch">
+    <input id="on2" type="checkbox">
+    <div class="slider"></div>
+  </label>
+  <p id="info"></p>
+</body>
+</html>
+<script>
+$(document).ready(function(){
+	$('#on1').on('change',function(){
+    	if(this.checked){
+    		console.log('ATIVO');
+    	}
+        else{
+          console.log('DESATIVO');
+
+        }
+    });
+});
+$(document).ready(function(){
+	$('#on2').on('change',function(){
+    	if(this.checked){
+    		console.log('ATIVO');
+    	}
+        else{
+          console.log('DESATIVO');
+
+        }
+    });
+});
+</script>

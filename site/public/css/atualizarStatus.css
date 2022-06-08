@@ -1,0 +1,206 @@
+/* Colors 
+_________________________________ */
+
+:root {
+    --color-primary: #97ABB7;
+    --color-weight: #324048;
+    --color-blue: #5176b5;
+    --color-white: #ffffff;
+    --color-gray: #f3f3f3;
+}
+
+
+/*  Texts
+_________________________________ */
+
+.cadastro h1 {
+    font-size: 45px;
+    text-align: justify center;
+    color: var(--color-blue);
+}
+
+.cadastro p {
+    font-size: 18px;
+    font-weight: 800;
+    text-align: justify center;
+    color: #435da5;
+    margin: 30px 0;
+}
+
+/*  Cadastro
+_________________________________ */
+body{
+    padding: 0;
+    margin: 0; 
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+}
+
+.banner-login {
+  color: white;
+  height: 550px;
+  /* border: 3px solid yellow; */
+  background-image: url(".././assets/imgs/bg-jelly-fish-para_outras_pags.png");
+  background-size: cover;
+}
+
+.banner-login .container {
+  height: 500px;
+  /* border: 3px solid green; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow-y: hidden;
+  overflow: hidden;
+}
+
+.banner-login {
+  color: var(--color-weight);
+}
+
+.banner-login .card {
+  height: 25rem;
+  width: auto;
+  flex-flow: column nowrap;
+  background: #2f4c671f;
+  box-shadow: 0 0 20px #00000065;
+  padding: 1% 4% 1% 5%;
+  border-radius: 4px;
+  border-top: 4px solid #97ABB7;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+.banner-login .card::-webkit-scrollbar {
+  width: 15px;
+}
+
+.banner-login .card::-webkit-scrollbar-track {
+  background-color: var(--color-gray);
+}
+
+.banner-login .card::-webkit-scrollbar-thumb {
+  background-color: var(--color-primary);
+  border-radius: 20px;
+  border: 3px solid var(--color-gray);
+}
+
+.users{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    text-align: start;
+}
+
+.column_usuario{
+    display: flex;
+    flex-direction: column; 
+    height: 100%;
+    width: 100%;
+}
+
+.end_label{
+    width: 50%;
+    display: flex;
+    justify-content: end;
+}
+
+#form_cadastro{
+  display: flex;
+}
+
+.cadastro_esquerda{
+  width: 50%;
+  height: 100%;
+  margin-left: 0%;
+  margin-right: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.cadastro_direita{
+  width: 50%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.alinhar_usuario{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 3%;
+    margin-top: 10px;
+    border: #324048 1px solid;
+}
+
+.banner-login a {
+  color: white;
+  text-decoration: none;
+}
+
+.banner-login #div_erros_login {
+  margin-top: 15px;
+}
+
+button {
+  cursor: pointer;
+}
+
+#img_lateral{
+  height: 40%;
+}
+
+/* FORMULARIO */
+
+.style_imput {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  box-sizing: border-box;
+  border-radius: var(--border-radius);
+  border: 1px solid #dddddd;
+  outline: none;
+  background: #eeeeee;
+  transition: background 0.2,border-color 0.2s;
+  flex-direction: column;
+}
+
+.btn {
+  width: 100%;
+  padding: 1rem 2rem;
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+  background-color: var(--color-blue);
+  
+  }
+  
+.btn:hover {
+      background: #847ee2;
+    }
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.loading-div {
+  width: 50px;
+  /* border: 3px solid pink; */
+  margin: auto;
+  display: none;
+}
+
+.loading-div img {
+  height: 50px;
+  width: 50px;
+}

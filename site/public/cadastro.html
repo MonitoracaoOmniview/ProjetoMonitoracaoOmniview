@@ -1,0 +1,270 @@
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/imgs/logos/omniview-logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/defaultstyle.css">
+    <link rel="stylesheet" href="./css/cadastroresponsivo.css">
+    <link rel="stylesheet" href="./css/cadastrostyle.css">
+    <script src="js/funcoes.js"></script>
+
+    <title>OmniView | Cadastro</title>
+</head>
+
+<body>
+
+    <header id="header">
+        <div class="container">
+            <nav class="navbar" id="navBar">
+                <img id="logoNavbar" src="./assets/imgs/logos/omniview-logo.png">
+                <ul>
+                    <li><a href="" class="li-checked">Cadastrar funcionario</a></li>
+                    <li><a href="atualizacao_cadastro.html">Atualizar funcionario</a></li>
+                    <li><a href="loginEmpresa.html">Sair</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="lateral-m">
+        <nav>
+            <div class="nav">
+                <input type="checkbox" id="menu_lateral" class="input-menu ">
+
+                <label for="menu_lateral">
+                    <div class="menu">
+
+                        <span class="hamburguer"></span>
+                    </div>
+                </label>
+
+                <label for="menu_lateral" class="botao-fechar">x</label>
+
+                <div class="box-menu">
+                    <a href="loginEmpresa.html">Sair</button></a>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+
+
+
+    <br><br><br><br><br><br><br>
+    <div class="banner-login ">
+        <div class="container ">
+            <div class="card medio">
+                <h2>Cadastre aqui a seu funcionario</h2><br><br>
+                <div class="formulario">
+                    <div id="form_cadastro">
+                        <div id="cadastro_esquerda">
+                        Nome:
+                        <br>
+                        <input id="nome_input" type="text" placeholder="Chandler Bing" class="style_imput">
+                        <br>
+                        E-mail:
+                        <br>
+                        <input id="email_input" type="text" placeholder="meuemail@provedor.com" class="style_imput">
+                        <br>
+                        Senha:
+                        <br>
+                        <input id="senha_input" type="password" placeholder="******" class="style_imput">
+                        <br>
+                        Confirmação da Senha:
+                        <br>
+                        <input id="confirmacao_senha_input" type="password" placeholder="******" class="style_imput">
+                    </div><br>
+                    <div id="cadastro_direita">
+                        Cpf:
+                        <br>
+                        <input id="cpf_input" oninput="mascara(this)" type="text" placeholder="******" class="style_imput">
+                        <br>
+                        Cargo:
+                        <select id="cargo_input" type="checkbox" placeholder="Cargo" class="style_imput">
+                            <option value="">Selecione seu cargo...</option>
+                            <option value="S">Suporte</option>
+                            <option value="G">Gerente</option>
+                        </select>
+                        <br>
+                       
+                        <button class="btn" onclick="cadastrar()">Cadastrar</button>
+                    </div>
+                    </div>
+                </div>
+                <div id="div_aguardar" class="loading-div">
+                    <img src="./assets/circle-loading.gif" id="loading-gif">
+                </div>
+
+                <div id="div_erros_login">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="container">
+
+
+    </section>
+    <footer>
+        <div class="footer-info">
+            <div class="container">
+                <div class="align-links-footer">
+                    <a href=""><img src="./assets/imgs/logos/logo-fbc.webp"></a>
+                    <a href=""><img src="./assets/imgs/logos/logo-insta.webp"></a>
+                    <a href=""><img src="./assets/imgs/logos/logo-linkd.webp"></a>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-copyright">
+            <div class="container">
+                <p>© 2022 by OmniView todos direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
+
+<script>
+
+
+   
+
+    function mascara(i) {
+
+        var v = i.value;
+
+        if (isNaN(v[v.length - 1])) { // impede entrar outro caractere que não seja número
+            i.value = v.substring(0, v.length - 1);
+            return;
+        }
+
+        i.setAttribute("maxlength", "14");
+        if (v.length == 3 || v.length == 7) i.value += ".";
+        if (v.length == 11) i.value += "-";
+
+    }
+
+
+    (function () {
+        window.addEventListener('scroll', function () {
+            if (window.scrollY > 100) {
+                header.classList.add('header-active');
+                navBar.classList.add('navbar-active');
+                navBar.classList.remove('navbar');
+                logoNavbar.src = "./assets/imgs/logos/omniview-logo.png";
+            } else {
+                header.classList.remove('header-active');
+                navBar.classList.remove('navbar-active');
+                navBar.classList.add('navbar');
+                logoNavbar.src = "./assets/imgs/logos/logotipo.png";
+            }
+        });
+    })();
+
+    function cadastrar() {
+        aguardar();
+        
+        var nomeVar = nome_input.value;
+        var emailVar = email_input.value;
+        var senhaVar = senha_input.value;
+        var confirmacaoSenhaVar = confirmacao_senha_input.value;
+        var cpfVar = cpf_input.value;
+        var cargoVar = cargo_input.value;
+        // let checkGerente = document.getElementById('check_gerente');
+        // let checkSuporte = document.getElementById('check_suporte');
+
+
+        if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "" || cpfVar == "" || cargoVar == "") {
+
+            window.alert("Preencha todos os campos para prosseguir!");
+            if (nomeVar == "") {
+                console.log('nome está em branco')
+            }
+            if (emailVar == "") {
+                console.log('email está em branco')
+            }
+            if (senhaVar == "") {
+                console.log('senha está em branco')
+            }
+            if (confirmacaoSenhaVar == "") {
+                console.log('confirmacaoSenha está em branco')
+            }
+
+            finalizarAguardar();
+            return false;
+        }
+
+        // if (!checkGerente.checked && !checkSuporte.checked) {
+        //     window.alert("Preencha todos os campos para prosseguir!");
+        //     return false;
+        // }
+
+        if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1) {
+            window.alert("Ops, e-mail inválido! Verifique e tente novamente.");
+            finalizarAguardar();
+            return false;
+        }
+
+        if (senhaVar != confirmacaoSenhaVar) {
+            window.alert("As senhas inseridas devem ser iguais para prosseguir!");
+            finalizarAguardar();
+            return false;
+        }
+
+        
+
+        // if (checkGerente.checked && checkSuporte.checked) {
+        //     window.alert("Selecione apenas o cargo em que você atua.");
+        //     return false;
+        // }
+        // else if (checkGerente.checked) {
+        //     window.alert("Bem vindo gerente")
+        // }
+        // else if (checkSuporte.checked) {
+        //     window.alert("Bem vindo suporte");
+        // }
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                nomeServer: nomeVar,
+                emailServer: emailVar,
+                senhaServer: senhaVar,
+                cpfServer: cpfVar,
+                cargoServer: cargoVar,
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                window.alert("Cadastro realizado com sucesso!");
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
+    }
+    
+    function sair(){
+        window.location.href = './loginEmpresa.html'
+    }
+        
+</script>

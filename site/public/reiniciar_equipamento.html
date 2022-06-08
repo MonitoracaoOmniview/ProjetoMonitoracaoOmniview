@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OmniView | Equipamentos</title>
+    <link rel="stylesheet" href="./css/defaultstyle.css">
+    <link rel="shortcut icon" href="./assets/imgs/logos/omniview-logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/indexresponsivo.css">
+    <link rel="stylesheet" href="./css/dashboardgerente.css">
+    <link rel="stylesheet" href="./css/indexstyle.css">
+</head>
+<body>
+
+    <header id="header">
+        <div class="container">
+            <nav class="navbar" id="navBar">
+                <img id="logoNavbar" src="./assets/imgs/logos/omniview-logo.png">
+                <ul>
+                    <li><a href="gerente_caixa.html">Caixas</a></li>
+                    <li><a href="gerente_totem.html">Totem</a>
+                    <li><a href="" class="li-checked">Equipamentos</a>
+                    <li><a href="sair.html"><button class="botao-entrar">Sair</button></a></li>
+
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="lateral-m">
+        <nav>
+            <div class="nav">
+                <input type="checkbox" id="menu_lateral" class="input-menu ">
+
+                <label for="menu_lateral">
+                    <div class="menu">
+
+                        <span class="hamburguer"></span>
+                    </div>
+                </label>
+
+                <label for="menu_lateral" class="botao-fechar">x</label>
+                
+                <div class="box-menu">
+                    <a href="gerente_caixa.html">Caixas</a>
+                    <a href="gerente_totem.html">Totem</a>
+                    <a href="" class="li-checked">Equipamentos</a>
+                    <a href="sair.html"><button class="botao-entrar">Sair</button></a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <br><br><br><br><br><br><br>
+    <div id="social_reiniciar">
+
+        <div class="div_reiniciar">Caixa 01<div><button class="but_reiniciar" onclick="Modal.open()">Reiniciar equipamento</button></div></div>
+        <div class="div_reiniciar">Caixa 02<div><button class="but_reiniciar" onclick="Modal.open()">Reiniciar equipamento</button></div></div>
+        <div class="div_reiniciar">Totem 01<div><button class="but_reiniciar" onclick="Modal.open()">Reiniciar equipamento</button></div></div>
+        <div class="div_reiniciar">Totem 02<div><button class="but_reiniciar" onclick="Modal.open()">Reiniciar equipamento</button></div></div>
+        <div class="div_reiniciar">Totem 03<div><button class="but_reiniciar" onclick="Modal.open()">Reiniciar equipamento</button></div></div>
+  
+    </div>
+    <div class="modal-overlay">
+        <div class="modal">
+            <div class="box-fechar" onclick="Modal.close()">X</div>
+            <div class="container-top-title">
+                <h1>Tem certeza que deseja reiniciar a aplicação?</h1><br><br><br>
+                <h3>Isso forçará a paralização do equipamento</h3>
+            </div>
+            <div class="container-btn">
+                <button id="botao-area1" class="btn-area" onclick="reiniciarmaq()"><h2>SIM</h2></button>
+                <button id="botao-area2" class="btn-area" onclick="Modal.close()"><h2>NÃO</h2></button>
+            </div>
+ 
+        </div>
+    </div>
+    
+
+    
+            <div class="footer-copyright">
+                <div class="container">
+                    <p>© 2022 by OmniView todos direitos reservados.</p>
+                </div>
+            </div>
+        </footer>
+</body>
+</html>
+<script>
+    const Modal = {
+        open() {
+            //Open modal;
+            // add class active to modal;
+            document.querySelector(".modal-overlay").classList.add("active");
+        },
+        close() {
+            //Close modal;
+            //remove class active to modal;
+            document.querySelector(".modal-overlay").classList.remove("active");
+        },
+    };
+
+
+
+</script>

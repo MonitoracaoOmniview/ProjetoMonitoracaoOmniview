@@ -1,0 +1,99 @@
+/* Media query 
+_________________________________ */
+
+@media only screen and (max-width: 1020px) {
+    header {
+        display: none;
+    }
+    .lateral-m {
+        display: block;
+    }
+    .menu-mobile {
+        display: block;
+    }
+    h1 {
+        font-size: 40px;
+        color: #333;
+        margin-top: 80px;
+    }
+    .forms img {
+        height: 200px;
+    }
+  
+    .forms img {
+        display: none;
+    }
+
+
+
+}
+@media only screen and (max-width: 930px) {
+    .banner-login .container{
+        height: 461px;
+        width: 630px;
+
+    }
+
+
+}
+
+@media only screen and (max-width: 830px) {
+    .forms{
+        padding: 86px 0 100px;
+    }
+
+    .forms form {
+        height: 80% !important;
+        padding: 5% 0% 0% 0% !important; 
+        width: 100% !important;
+       
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+
+    .cadastro_direita{
+        width: 80% !important;
+        margin-bottom: 30px;
+    }
+    .cadastro_esquerda{
+        margin-left: 0%!important;
+        margin-right: 0%!important;
+        width: 80%!important;
+    }
+   
+
+    
+ }
+
+ @media only screen and (max-width: 673px) {
+    .banner-login .container{
+        height: 370px;
+        width: 480px;
+    }
+}
+
+@media only screen and (max-width: 630px) {
+  
+
+}
+
+@media only screen and (max-width: 500px) {
+    .banner-login .container{
+        height: 270px;
+        width: 380px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .banner-login .container{
+        height: 170px;
+        width: 280px;
+    }
+}
+
+@media only screen and (max-width: 300px) {
+    .banner-login .container{
+        height: 70px;
+        width: 180px;
+    }
+}

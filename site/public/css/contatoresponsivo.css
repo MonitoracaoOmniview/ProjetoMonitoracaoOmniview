@@ -1,0 +1,55 @@
+/* Media query 
+_________________________________ */
+
+@media only screen and (max-width: 1020px) {
+    header {
+        display: none;
+    }
+    .lateral-m {
+        display: block;
+    }
+    .menu-mobile {
+        display: block;
+    }
+    h1 {
+        font-size: 40px;
+        color: #333;
+        margin-top: 80px;
+    }
+    .forms img {
+        height: 200px;
+    }
+    .forms{
+        
+    }
+}
+
+@media only screen and (max-width: 830px) {}
+
+@media only screen and (max-width: 672px) {
+
+
+    summary{
+        font-size: 15px;
+    }
+
+    p{
+        font-size: 10px;
+    }
+}
+@media only screen and (max-width: 630px) {
+    .forms img {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 323px) {
+    summary{
+        font-size: 10px;
+    }
+
+    p{
+        font-size: 5px;
+    }
+}
+

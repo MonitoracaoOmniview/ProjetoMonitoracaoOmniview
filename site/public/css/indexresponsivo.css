@@ -1,0 +1,233 @@
+/* Media query 
+_________________________________ */
+
+@media only screen and (max-width: 1020px) {
+    header {
+        display: none;
+    }
+    .lateral-m {
+        display: block;
+    }
+    .introducao {
+        flex-direction: column;
+        width: 100%;
+    }
+    .align-introducao:first-of-type {
+        width: 100%;
+    }
+    .align-introducao:last-of-type {
+        width: 100%;
+    }
+    .align-introducao p {
+        font-size: 25px;
+    }
+    .align-introducao button {
+        padding: 30px 40px;
+        width: 100%;
+        border-radius: 350px;
+        margin-bottom: 20px;
+    }
+    .align-introducao button:first-of-type {
+        margin-right: 0;
+    }
+    .align-introducao button:last-of-type {
+        margin-left: 0;
+    }
+    .align-introducao img {
+        width: 60%;
+        height: auto;
+    }
+    .time{
+        height: 94vh!important;
+    }
+
+    .time p {
+        font-size: 25px;
+        margin: 30px 0;
+    }
+    .time img {
+        width: 100px;
+        height: auto;
+    }
+    .time h1,
+    .time img {
+        margin: 0;
+    }
+    .topics {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+    }
+    .topics img {
+        margin-top: 10%;
+        height: auto;
+    }
+    .topics h1 {
+        font-size: 30px;
+    }
+    .topics p {
+        font-size: 25px;
+    }
+    .topics h1,
+    .topics p {
+        margin: 30px 0;
+    }
+    .topics:nth-child(2) {
+        margin-left: 0;
+        flex-direction: column-reverse;
+    }
+    .topicos-projeto {
+        flex-direction: column;
+        align-items: center;
+    }
+    .topico {
+        width: 100%;
+        height: 200px;
+        margin-bottom: 50px;
+    }
+    .topico h2 {
+        font-size: 25px;
+    }
+    .topico .icon {
+        margin-top: 0;
+    }
+    .icon {
+        width: 100px;
+        height: 100px;
+    }
+    .list-learnings {
+        flex-direction: column;
+        align-items: center;
+    }
+    .learn {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        margin: 20px 0;
+    }
+    .learn:first-of-type {
+        margin-top: 0;
+    }
+    .learn img {
+        width: auto;
+        height: 100%;
+    }
+    #our-clients {
+        display: none;
+    }
+    .button-click {
+        padding: 40px 40px;
+        width: 90%;
+        border-radius: 350px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 5%;
+
+    }
+    .face3{
+        width: 340px;
+        height: 110px;
+        margin-top: 320px;
+    
+    }
+    .face{
+        width: 340px;
+        height: 110px;
+    }
+    .face2{
+        width: 340px;
+        height: 110px;
+        margin-top: 160px;
+    }
+   
+   
+    .time .container #position_card{
+        display: flex;
+        margin-top: 5vh;
+        margin-bottom: 5vh;
+        flex-direction: column;
+    }
+
+    .align-introducao h1 a{
+        font-size: 45px;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    .learn {
+        width: 100%;
+        flex-direction: column;
+        margin: 20px 0;
+    }
+    .learn img {
+        width: 100%;
+        height: auto;
+    }
+    .description-publication {
+        padding: 20px 0 50px;
+    }
+    .empresas img:not(:last-of-type) {
+        margin-right: 20px;
+    }
+    .button-click {
+        margin-bottom: -100px;
+    }
+    .content-experience {
+        display: none;
+    }
+    .Slides{
+        display: none!important;
+    }
+    .Slides{
+        display: block!important;
+    }
+    .slide_anterior{
+        display: none;
+    }
+    .slide_prox{
+        display: none;
+    }
+    .dot{
+        display: none;
+    }
+    .text{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 672px) {
+    .align-introducao p{
+        font-size: 20px;
+    }
+
+    .align-introducao h1{
+        font-size: 35px;
+    }
+
+    .align-introducao h1 a{
+        font-size: 35px;
+    }
+
+    summary{
+        font-size: 15px;
+    }
+
+    p{
+        font-size: 10px;
+    }
+}
+
+@media only screen and (max-width: 460px) {
+    .align-introducao p{
+        font-size: 15px;
+    }
+
+    .align-introducao h1{
+        font-size: 30px;
+    }
+
+    .align-introducao h1 a{
+        font-size: 30px;
+    }
+}

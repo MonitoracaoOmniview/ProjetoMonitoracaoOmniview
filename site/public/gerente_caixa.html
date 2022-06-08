@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OmniView | Gerente</title>
+    <link rel="stylesheet" href="./css/defaultstyle.css">
+    <link rel="shortcut icon" href="./assets/imgs/logos/omniview-logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/indexresponsivo.css">
+    <link rel="stylesheet" href="./css/dashboardgerente.css">
+    <script src="js/functionDataBase.js"></script>
+</head>
+
+<body>
+
+    <header id="header">
+        <div class="container">
+            <nav class="navbar" id="navBar">
+                <img id="logoNavbar" src="./assets/imgs/logos/omniview-logo.png">
+                <ul>
+                    <li><a href="" class="li-checked">Seus graficos</a></li>
+                    <li><a href="sair.html"><button class="botao-entrar">Sair</button></a></li>
+
+
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="lateral-m">
+        <nav>
+            <div class="nav">
+                <input type="checkbox" id="menu_lateral" class="input-menu ">
+
+                <label for="menu_lateral">
+                    <div class="menu">
+
+                        <span class="hamburguer"></span>
+                    </div>
+                </label>
+
+                <label for="menu_lateral" class="botao-fechar">x</label>
+
+                <div class="box-menu">
+                    <a href="" class="li-checked">Caixas</a>
+                    <a href="gerente_totem.html">Totem</a>
+                    <a href="reiniciar_equipamento.html">Equipamentos</a>
+                    <a href="sair.html"><button class="botao-entrar">Sair</button></a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <br><br><br><br><br><br><br>
+    <div class="social">
+        <div id="listarTotemId" class="cards">
+
+        </div>
+
+        <div class="alertasFixos">
+            <div class="alertasMovimento">
+                <div id="divAlerta" class="alertaGigante">
+
+                    <div id="div_porcentagem_id">
+                    <span id="porcentagemAlerta">-- </span><span>%</span> 
+                </div>
+
+                <div id="div_toten_id">
+                    <span id="id_totem">MAQUINA <span id="idTotemAlerta"></span> </span>
+                </div>
+
+                </div>
+            </div>
+            <div class="alertasInstrucaoSocial">
+                <div class="alertasInstrucao" id="alertaVerde">0-60</div>
+                <div class="alertasInstrucao" id="alertaAmarelo">60-70</div>
+                <div class="alertasInstrucao" id="alertaLaranja">70-80</div>
+                <div class="alertasInstrucao" id="alertaVermelho">80-100</div>
+            </div>
+        </div>
+    </div>
+    <!-- Start of omniview2898 Zendesk Widget script -->
+    <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=decaa74e-b0bf-41bd-bfb5-a8e236097538">
+    </script>
+
+</body>
+
+</html>
+<script>
+
+    // ===========================ADC TOTENS================================================
+
+    var idMaquina
+    var ramTotalConta 
+
+    function listarBotoes() {
+        fetch("/usuarios/getBotao", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        }).then(async function (resposta) {
+            // onde eu vou renderizar as coisas
+            const container = document.querySelector(".cards");
+            const usuarios = await resposta.json();
+            for (let i = 0; i < usuarios.length; i++) {
+
+                let flo = document.createElement("div")
+                let face = document.createElement("div")
+                let alinhar_componentes = document.createElement("div")
+                let titulo = document.createElement("h5")
+                let button_reiniciar = document.createElement("button")
+                let button_remover = document.createElement("button")
+                let trocar_maquina = document.createElement("button")
+                let number = document.createElement("span")
+
+                container.append(flo)
+                flo.append(face)
+                face.append(alinhar_componentes)
+                alinhar_componentes.append(titulo)
+                alinhar_componentes.append(trocar_maquina)
+                alinhar_componentes.append(button_reiniciar)
+                alinhar_componentes.append(button_remover)
+
+                titulo.innerHTML = "MAQUINA " + usuarios[i].id
+                button_reiniciar.innerHTML = "Reiniciar maquina"
+                button_remover.innerHTML = "Remover maquina"
+                trocar_maquina.innerHTML = "Visualizar andamento"
+
+                flo.setAttribute("class", "flip");
+                face.setAttribute("class", "face");
+                alinhar_componentes.setAttribute("class", "alinhar_componentes");
+                button_reiniciar.setAttribute("class", "button_reiniciar");
+                button_remover.setAttribute("class", "button_remover");
+                trocar_maquina.setAttribute("class", "trocar_maquina");
+                number.setAttribute("class", "number");
+
+                button_reiniciar.onclick = function reiniciarMaquina() {
+
+                    fetch("/usuarios/reiniciarMaquina", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({
+                            idMaquinaServer: usuarios[i].id,
+                        }),
+                    }).then((res) => console.log(res));
+
+                    document.location.reload(true);
+                    window.alert("Maquina reiniciada com sucesso")
+                }
+
+                button_remover.onclick = function removerMaquina() {
+
+                    fetch("/usuarios/removerMaquina", {
+                        method: "DELETE",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({
+                            idMaquinaServer: usuarios[i].id,
+                        }),
+                    }).then((res) => console.log(res));
+
+                    document.location.reload(true);
+                    window.alert("Maquina DELETADA com sucesso")
+                }
+
+                trocar_maquina.onclick = function trocar_maquina() {
+
+                    idMaquina = usuarios[i].id
+                    ramTotalConta = usuarios[i].ramTotal
+
+                    idTotemAlerta.innerHTML = idMaquina
+
+                    var ram = sessionStorage.RAMEMUSOTOT2
+                    console.log(ram)
+                }
+            }
+        });
+    }
+
+    
+    function getMemoriaRamEmUsoTot2() {
+
+fetch("/usuarios/getMemoriaRamEmUsoTot2", {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+        idMaqServer: idMaquina
+
+    })
+}).then(function (resposta) {
+    //console.log("ESTOU NO THEN DO getMemoriaRamEmUsoTot2()!")
+    if (resposta.ok) {
+        resposta.json().then(function (resposta) {
+            //console.log("Dados recebidos do usuario: ", JSON.stringify(resposta));
+
+            ramEmuso = resposta[resposta.indexOf(':') + 1]//não sei pq mas isso funciona
+            //console.log(ramEmuso.RamEmUsobd);
+            sessionStorage.RAMEMUSOTOT2 = ramEmuso.RamEmUsobd;
+
+        });
+    } else {
+        //console.log("Dados recebidos: ", JSON.stringify(resposta));
+    }
+}).catch(function (erro) {
+    console.log(erro);
+})
+return false;
+//.then(async function (resposta) {
+//   // onde eu vou renderizar as coisas
+//   const container = document.querySelector(".botoes");
+//   const usuarios = await resposta.json();
+//   console.log ("NAO NAO NAO" + usuarios.ram)
+// })
+
+};
+
+  function getram() {
+
+var ramTotal = Number(ramTotalConta);
+
+var ramMaquina = Number(sessionStorage.RAMEMUSOTOT2);
+
+var valorCheio = ramTotal;
+var valorUsado = ramMaquina;
+var calculoPorcentagem = ((valorUsado * 100) / valorCheio).toFixed(0);
+
+porcentagemAlerta.innerHTML = calculoPorcentagem
+
+// ================ Muda a dor do totem 1 ==============
+if (calculoPorcentagem <= 60) {
+    divAlerta.style.backgroundColor = 'green';
+}
+
+else if (calculoPorcentagem <= 70) {
+    divAlerta.style.backgroundColor = 'yellow';
+
+}
+
+else if (calculoPorcentagem <= 80) {
+    divAlerta.style.backgroundColor = 'orange';
+
+}
+
+else {
+    divAlerta.style.backgroundColor = 'red';
+}
+
+}
+
+setInterval(() => {
+    getMemoriaRamEmUsoTot2();
+    getram();
+  }, 1000)
+  
+    window.addEventListener("load", listarBotoes);
+
+</script>

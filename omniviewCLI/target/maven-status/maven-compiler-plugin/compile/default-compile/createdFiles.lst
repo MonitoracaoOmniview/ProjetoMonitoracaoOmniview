@@ -1,0 +1,13 @@
+metodos\RegistraMaquinaCLI.class
+metodos\AutenticarLogin.class
+metodos\AlertasSlack.class
+metodos\ConsultaBanco.class
+metodos\IntegracaoSlack.class
+metodos\RecursosComputador.class
+metodos\Log.class
+com\mycompany\omniview\ConnectionMysql.class
+com\mycompany\omniview\Connection.class
+user\User.class
+com\mycompany\omniview\LoginCLI.class
+metodos\MedicoesComputador$1.class
+metodos\MedicoesComputador.class

@@ -1,0 +1,81 @@
+:root {
+    --color-perigo: #fd1818;
+    --color-cuidado: #e6ff07;
+    --color-certo: #137200;
+    --color-primary: #97ABB7;
+    --color-weight: #324048;
+    --color-blue: #5176b5;
+    --color-white: #ffffff;
+    --color-gray: #f3f3f3;
+}
+
+.banner-cadastro .card_medio_cad {
+    background-color: #282c34;
+    height: 50vh;
+    width: 30vw;
+    display: flex;
+    justify-content: center;
+    align-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    box-shadow: 10px black;
+    border-radius: 5px;
+    color: #f3f3f3;
+  }
+
+.banner-cadastro{
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    background-color: #282c34;
+    color: #f3f3f3;
+    filter: drop-shadow(0 50px 50px #42318f63);
+}
+
+
+
+  .banner-cadastro .container_login {
+    height: 35vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: 10px black;
+    background-color: #282c34;
+    color: #f3f3f3;
+  }
+  
+  .banner-cadastro {
+    color: var(--color-weight);
+    background-color: #282c34;
+  }
+  
+  
+  button {
+    cursor: pointer;
+  }
+  
+  .btn{
+    width: 100%;
+    padding: 1rem 2rem;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    background: var(--color-weight);
+}
+
+.btn:hover{
+    background: var(--color-primary);
+}
+
+.btn:active{
+    transform: scale(0.98);
+}
