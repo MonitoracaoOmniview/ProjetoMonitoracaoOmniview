@@ -6,6 +6,16 @@ Um projeto feito com o intuito de capturar dados e monitorar máquinas que são 
 <p align="center"><img height="30%" src="https://dev-to-uploads.s3.amazonaws.com/uploads/articles/v68x7ybtmmfzzp7b2day.png"/></p>
 
 
+## Autores
+
+- [@PedroTresmondi](https://www.github.com/PedroTresmondi)
+- [@Wesleysou](https://www.github.com/Wesleysou)
+- [@Rafael-Araujo03](https://www.github.com/Rafael-Araujo03)
+- [@GustavoLura](https://www.github.com/GustavoLura)
+- [@marianacazzoto](https://www.github.com/marianacazzoto)
+
+
+
 
 ## Funcionalidades
 
